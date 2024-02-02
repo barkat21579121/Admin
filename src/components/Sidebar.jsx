@@ -55,6 +55,8 @@ const Sidebar = () => {
                     ? Navigate("/products")
                     : (Navigate("/") && setSelected(index)) || index == "4"
                     ? Navigate("/Analytics")
+                    : Navigate("/") || index == "1"
+                    ? Navigate("/Orders")
                     : Navigate("/")
                 }
               >

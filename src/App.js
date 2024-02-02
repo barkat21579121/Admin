@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MainDash />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/Orders/:id" element={<Order />} />
+            <Route path="/Orders" element={<Order />} />
             <Route path="/Analytics" element={<CustomerReview />} />
           </Routes>
           <RightSide />

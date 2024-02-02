@@ -1,11 +1,14 @@
-// BasicExample.js
 import React from "react";
+import { useLocation } from "react-router-dom"; // Import useLocation hook
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Manu.css";
 import axios from "axios";
 
 function BasicExample(props) {
+  const location = useLocation(); // Get the current location
+  const isOrdersRoute = location.pathname === "/Orders";
+
   const handleOrderNow = async () => {
     try {
       const res = await axios.post("http://localhost:3001/api/orders", {
@@ -36,9 +39,21 @@ function BasicExample(props) {
             {props.strCategory}
           </Card.Title>
           <Card.Text>{props.strCategoryDescription}</Card.Text>
-          <Button variant="primary" onClick={handleOrderNow}>
-            Order Now
-          </Button>
+
+          {isOrdersRoute ? (
+            <Button
+              variant="primary"
+              onClick={() => {
+                alert("order deleted sucessFully");
+              }}
+            >
+              Delete
+            </Button>
+          ) : (
+            <Button variant="primary" onClick={handleOrderNow}>
+              Order Now
+            </Button>
+          )}
         </Card.Body>
       </Card>
     </div>
