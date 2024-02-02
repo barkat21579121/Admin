@@ -4,7 +4,7 @@ import RightSide from "./components/RightSide/RightSide";
 import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Products from "./components/Manu/Products";
-import Order from "./components/Manu/Order";
+import Order from "./components/Manu/details/Order";
 import CustomerReview from "./components/CustomerReview/CustomerReview";
 
 function App() {

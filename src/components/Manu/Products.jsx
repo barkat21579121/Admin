@@ -30,6 +30,10 @@ const Products = () => {
                 strCategoryThumb={item.strCategoryThumb}
                 strCategory={item.strCategory}
               />
+              <button onClick={() => alert(item.strCategoryDescription)}>
+                {" "}
+                {item.strCategory} details
+              </button>
             </div>
           );
         })}
