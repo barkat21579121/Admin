@@ -40,7 +40,7 @@ const Sidebar = () => {
         <div className="logo">
           <img src={Logo} alt="logo" />
           <span>
-            Sh<span>o</span>ps
+            Ba<span>rk</span>at
           </span>
         </div>
 
@@ -53,6 +53,8 @@ const Sidebar = () => {
                 onClick={() =>
                   setSelected(index) || index == "3"
                     ? Navigate("/products")
+                    : (Navigate("/") && setSelected(index)) || index == "4"
+                    ? Navigate("/Analytics")
                     : Navigate("/")
                 }
               >

@@ -5,6 +5,7 @@ import { Routes, BrowserRouter, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Products from "./components/Manu/Products";
 import Order from "./components/Manu/Order";
+import CustomerReview from "./components/CustomerReview/CustomerReview";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<MainDash />} />
             <Route path="/products" element={<Products />} />
             <Route path="/Orders/:id" element={<Order />} />
+            <Route path="/Analytics" element={<CustomerReview />} />
           </Routes>
           <RightSide />
         </div>{" "}
