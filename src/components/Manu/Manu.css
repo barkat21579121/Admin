@@ -1,0 +1,36 @@
+.products_list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: 100px auto;
+  overflow: auto;
+  gap: 10px;
+}
+.card {
+  width: 18rem;
+  height: 18rem;
+  /* overflow: auto; */
+  border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 13px 11px 51px -34px rgba(184, 94, 184, 0.53);
+}
+img {
+  width: 80%;
+}
+button {
+  background-color: pink;
+  color: black;
+  border: 1px pink;
+  width: 100px;
+  padding: 10px;
+  border-radius: 10px;
+}
+button:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}

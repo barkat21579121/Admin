@@ -98,9 +98,9 @@ export const cardsData = [
 export const UpdatesData = [
   {
     img: img1,
-    name: "Andrew Thomas",
-    noti: "has ordered Apple smart watch 2500mh battery.",
-    time: "25 seconds ago",
+    name: "Alex",
+    noti: "received chiken tikka  ",
+    time: "20 minutes ago ",
   },
   {
     img: img2,

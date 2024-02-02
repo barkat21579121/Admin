@@ -5,11 +5,13 @@ import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { SidebarData } from "../Data/Data";
 import { UilBars } from "@iconscout/react-unicons";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
 
   const [expanded, setExpaned] = useState(true);
+  const Navigate = useNavigate();
 
   const sidebarVariants = {
     true: {
@@ -19,7 +21,7 @@ const Sidebar = () => {
       left: "-60%",
     },
   };
-  console.log(window.innerWidth);
+
   return (
     <>
       <div
@@ -48,7 +50,11 @@ const Sidebar = () => {
               <div
                 className={selected === index ? "menuItem active" : "menuItem"}
                 key={index}
-                onClick={() => setSelected(index)}
+                onClick={() =>
+                  setSelected(index) || index == "3"
+                    ? Navigate("/products")
+                    : Navigate("/")
+                }
               >
                 <item.icon />
                 <span>{item.heading}</span>
