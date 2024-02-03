@@ -1,12 +1,12 @@
 import React from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation hook
+import { useLocation } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import "./Manu.css";
 import axios from "axios";
 
 function BasicExample(props) {
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
   const isOrdersRoute = location.pathname === "/Orders";
 
   const handleOrderNow = async () => {
@@ -20,6 +20,17 @@ function BasicExample(props) {
     } catch (error) {
       console.error("Error placing order:", error.message);
       alert("Error placing order. Please try again later.");
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:3001/api/orders/${props.id}`);
+      props.onDelete(props.id);
+      alert("Order deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting order:", error.message);
+      alert("Error deleting order. Please try again later.");
     }
   };
 
@@ -41,12 +52,7 @@ function BasicExample(props) {
           <Card.Text>{props.strCategoryDescription}</Card.Text>
 
           {isOrdersRoute ? (
-            <Button
-              variant="primary"
-              onClick={() => {
-                alert("order deleted sucessFully");
-              }}
-            >
+            <Button variant="primary" onClick={handleDelete}>
               Delete
             </Button>
           ) : (
