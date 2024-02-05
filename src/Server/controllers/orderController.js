@@ -1,4 +1,5 @@
 const Order = require("../models/orderModel");
+const Users = require("../models/UserAuth");
 const mongoose = require("mongoose");
 exports.getAllOrders = async (req, res) => {
   try {
