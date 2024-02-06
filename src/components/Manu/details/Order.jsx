@@ -13,7 +13,7 @@ const Order = (props) => {
   const fetchData = async () => {
     try {
       const response = await axios.get(apiUrl);
-      setData(response.data);
+      setData(response.data.orders);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -26,16 +26,17 @@ const Order = (props) => {
   return (
     <div style={{ overflow: "auto" }}>
       <div className="products_list">
-        {data.map((item) => (
-          <div key={item._id.$oid} className="check">
-            <BasicExample
-              id={item._id}
-              strCategoryThumb={item.image}
-              strCategory={item.title}
-              onDelete={handleDelete}
-            />
-          </div>
-        ))}
+        {data &&
+          data?.map((item) => (
+            <div key={item._id.$oid} className="check">
+              <BasicExample
+                id={item._id}
+                strCategoryThumb={item.image}
+                strCategory={item.title}
+                onDelete={handleDelete}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );

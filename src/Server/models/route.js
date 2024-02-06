@@ -1,17 +1,17 @@
-// routes.js
 const express = require("express");
 const router = express.Router();
-
 const {
   getAllOrders,
   createOrder,
   deleteOrder,
-  UserData,
+  registerUser,
+  loginUser,
 } = require("../controllers/orderController");
 
-router.post("/registration", UserData);
 router.get("/orders", getAllOrders);
 router.post("/orders", createOrder);
 router.delete("/orders/:id", deleteOrder);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
 
 module.exports = router;
