@@ -6,6 +6,7 @@ import Sidebar from "./components/Sidebar";
 import Products from "./components/Manu/Products";
 import Order from "./components/Manu/details/Order";
 import CustomerReview from "./components/CustomerReview/CustomerReview";
+import RegistrationForm from "./components/Authentication/RegistrationForm ";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/Orders" element={<Order />} />
             <Route path="/Analytics" element={<CustomerReview />} />
+            <Route path="/registration" element={<RegistrationForm />} />
           </Routes>
           <RightSide />
         </div>{" "}

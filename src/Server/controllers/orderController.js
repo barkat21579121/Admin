@@ -10,7 +10,30 @@ exports.getAllOrders = async (req, res) => {
     res.status(500).send("Internal Server Error");
   }
 };
+exports.UserData = async (req, res) => {
+  try {
+    if (req.body.password !== req.body.confirmPassword) {
+      return res
+        .status(400)
+        .json({ message: "Password and confirmPassword do not match" });
+    }
 
+    const newUser = new Users({
+      name: req.body.name,
+      email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
+      work: req.body.work,
+      password: req.body.password,
+      confirmPassword: req.body.confirmPassword,
+    });
+
+    const savedUser = await newUser.save();
+
+    res.status(201).json(savedUser);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
 exports.createOrder = async (req, res) => {
   try {
     const { title, image } = req.body;
